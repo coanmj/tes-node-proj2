@@ -1,101 +1,530 @@
-<!DOCTYPE html>
-<html>
-<style>
-body, html {
-    height: 100%;
-    margin: 0;
-}
+7<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-.bgimg {
-    background-image: url('../images/startrails-monument-valley-night-arizona-48182.jpeg');
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    color: white;
-    font-family: "Courier New", Courier, monospace;
-    font-size: 25px;
-}
+        <title>HTH-Levidow</title>
 
-.topleft {
-    position: absolute;
-    top: 0;
-    left: 16px;
-}
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+        <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+        <link href="assets/css/owl.carousel.css" rel="stylesheet">
+        <link href="assets/css/owl.carousel.theme.min.css" rel="stylesheet">
+        <link href="assets/css/main.css" rel="stylesheet">
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+    </head>
+    <body data-spy="scroll" data-target="#main-navbar">
 
-.bottomleft {
-    position: absolute;
-    bottom: 0;
-    left: 16px;
-}
+        <!-- NavigationBar Section -->
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">
+                    <img class="img-responsive" src="../images/logo.png" alt="logo">
+                  </a>
+                </div>
 
-.middle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="main-navbar">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#header">Home <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#choose">About us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#industries">Industries</a>
+                     <ul class="teamdd">
+                        <li><a href="/users/industries">All Industries</a></li>
+                    </ul></li>
+                    <li><a href="#team">Our Team</a>
+					<ul class="teamdd">
+                        <li><a href="/users/team">All Team Members</a></li>
+                    </ul></li>
+                    <li><a href="#clients">Careers</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                     {{#if user}}
+                    <li><a href="/">Client Portal</a></li>
+                    {{else}}
+                    <li><a href="/users/login">Client Portal</a></li>
+                    {{/if}}
+					
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+                </nav>
 
-hr {
-    margin: auto;
-    width: 40%;
-}
-</style>
-<head>
-  <title>HTH Levidow</title>
-</head>
-<body>
+        <!-- Header Section -->
+            <header id="header" class="header overlay-dark">
+                <div class="container">
+                    <div class="row">
+                                                           {{#if success_msg}}
+          <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
 
-<div class="bgimg">
-  <div class="topleft">
-    <!--<p>Logo</p> -->
-  </div>
-  <div class="middle">
-    <img src="../images/HTH_Levidow-cropped.jpg">
-    <h1>WEBSITE UNDER CONSTRUCTION</h1>
-    <hr>
-    <p>Contact Us:</p>
-    <p>17770 N. Pacesetter Way, Suite 200</p>
-    <p>Scottsdale, AZ 85255</p>
-    <p>480-272-6450</p>
-   <!-- <p id="demo" style="font-size:30px"></p> -->
-  </div>
-  <!--<div class="bottomleft">
-    <p>Some text</p>
-  </div> -->
-</div>
+          {{#if error_msg}}
+      <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
 
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
 
-// Update the count down every 1 second
-var countdownfunction = setInterval(function() {
+          {{#if error}}
+      <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <div class="intro-box c-table">
+                                <div class="intro ct-cell">
+									 <hr/>
+									 <img class="img-responsive" src="../images/logo.png" alt="logo" style="margin: 0 auto;">
+									 <hr/>
+									 <h2>HOPKINS TAMERON HOSTAL LEVIDOW</h2>
+									 <h3>Turning vision into value</h3> 
+									 <h3></h3> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
-    // Get todays date and time
-    var now = new Date().getTime();
-    
-    // Find the distance between now an the count down date
-    var distance = countDownDate - now;
-    
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-    // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
-    
-    // If the count down is over, write some text 
-    if (distance < 0) {
-        clearInterval(countdownfunction);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-    }
-}, 1000);
-</script>
+        <!-- Why choose us -->
+            <section id="choose" class="choose overlay-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="title-box">
+                                <h2 class="section-title">About Us</h2>
+                            </div>
+                        </div>
+                    </div>
 
-</body>
+                     <div class="row">
+                        <div class="col-sm-12">
+                            <div class="aboutus-description">
+                                <p class="choose-detail"> Hopkins Tameron Hostal Levidow “HTH-Levidow” is dedicated to offering personalized, professional, and timely tax, consulting and wealth management services to our clients. The founders, Dave Hopkins, Joe Tameron, George Hostal, and Lloyd Levidow joined together in January 2017, after many years of experience together at a national firm. Their vision is to provide their clients with vast national firm experience and knowledge, but with the personal attention you deserve. </p>
+
+                                <p class="choose-detail">Our team is the foundation of our practice. HTH-Levidow was lucky enough to hand select our team members from the national firm, who joined us on our new journey. Our team shares the same professionalism, values, and ethics that carry forward to provide a positive experience for our clients every step of the way. We take pride in offering a unique work atmosphere with a strong sense of comradery. HTH is committed to our team’s continued professional development and education, as our clients benefit from the technical expertise and broad knowledge base we offer. </p>
+
+                                <p class="choose-detail">Our commitment to these values is the reason that we are TURNING VISION INTO VALUE for our clients.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="choose-detail">
+                                <br /> <br /> <br />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="choose-box">
+                                <span class="choose-icon ion-social-angular-outline"></span>
+                                <h3 class="choose-title">Reliability</h3>
+                                <p class="choose-detail">
+                                    We understand that your personal and business needs fluctuate and we are here to offer you sound advice and customized services that you can rely on.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="choose-box">
+                                <span class="choose-icon ion-compose"></span>
+                                <h3 class="choose-title">Dedication</h3>
+                                <p class="choose-detail">
+                                    We are dedicated to the obtainment of our clients’ goals and strive to ensure their needs are met with enthusiasm rooted with commitment to their success.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="choose-box">
+                                <span class="choose-icon ion-android-bulb"></span>
+                                <h3 class="choose-title">Expertise</h3>
+                                <p class="choose-detail">
+                                    Our team of Certified Public Accountants have a broad base of specialized knowledge to assist our clients in getting the best possible outcome to their unique professional needs.
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </section>
+
+        <!-- Practice areas -->
+            <section id="services" class="practice">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="title-box">
+                                <h2 class="section-title">Services</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                            <div class="practice-box">
+                                <img class="img-responsive img-full" src="../images/Prac-1.jpg">
+                                <div class="overlay">
+                                    <div class="c-table">
+                                        <div class="ct-cell">
+                                            <h3 class="practice-title">Taxes</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<div class="col-sm-6 col-md-4">
+                            <div class="practice-box">
+                                <img class="img-responsive img-full" src="../images/Outsourcing.jpg">
+                                <div class="overlay">
+                                    <div class="c-table">
+                                        <div class="ct-cell">
+                                            <h3 class="practice-title">Outsourcing</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="practice-box">
+                                <img class="img-responsive img-full" src="../images/Assurance.jpg">
+                                <div class="overlay">
+                                    <div class="c-table">
+                                        <div class="ct-cell">
+                                            <h3 class="practice-title">Assurance</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-4">
+                            <div class="practice-box">
+                                <img class="img-responsive img-full" src="../images/Consulting.jpg">
+                                <div class="overlay">
+                                    <div class="c-table">
+                                        <div class="ct-cell">
+                                            <h3 class="practice-title">Consulting</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class ="pagelink">
+                    <p>
+                                                <br />
+                        <a href="/users/home#header" class="button-link">All Services</a>
+                    </p>
+                </div>
+            </section>
+
+			   <section id="industries" class="choose overlay-light">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="title-box">
+                                <h2 class="section-title">Industries</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <a href="/users/industries">
+                            <div class="choose-box">
+                                <span class="choose-icon ion-hammer"></span>
+                                <h3 class="choose-title">Construction</h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="/users/industries#manufacturing">
+                            <div class="choose-box">
+                                <span class="choose-icon ion-android-settings"></span>
+                                <h3 class="choose-title">Manufacturing</h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="/users/industries#realestate">
+                            <div class="choose-box">
+                                <span class="choose-icon ion-home"></span>
+                                <h3 class="choose-title">Real Estate</h3>
+                            </div>
+                        </div>
+                    </div>
+					    <div class="col-sm-4">
+                            <a href="/users/industries#hospitality">
+                            <div class="choose-box">
+                                <span class="choose-icon ion-fork"></span>
+                                <h3 class="choose-title">Hospitality</h3>
+                            </div>
+                        </div>
+						  <div class="col-sm-4">
+                            <a href="/users/industries#professionalservices">
+                            <div class="choose-box">
+                                <span class="choose-icon ion-android-bulb"></span>
+                                <h3 class="choose-title">Professional Service</h3>
+                            </div>
+                        </div>
+						    <div class="col-sm-4">
+                                <a href="/users/industries#technology">
+                            <div class="choose-box">
+                                <span class="choose-icon ion-laptop"></span>
+                                <h3 class="choose-title">Technology</h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                                                <div class ="pagelink">
+                    <p>
+                        <br />
+                        <a href="/users/industries" class="button-link">All Industries</a>
+                    </p>
+                        </div>
+                </div>
+            </div>
+                </div>
+
+            </section>
+
+        <!-- Team -->
+            <section id="team" class="team">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="title-box">
+                                <h2 class="section-title">Our Team</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                        <a href="/users/lloydlevidow">
+                            <div class="team-box">
+                                <!-- <img class="img-responsive img-full" src="../images/team-1.jpg" alt="team"> -->
+                                <div class="team-detail">
+                                    <ul>
+                                        <li><h3>Lloyd J. Levidow, CPA</h3></li>
+                                        <br />
+                                        <li><h4>Partner</h4></li>
+                                    </ul>
+                                </div>
+                            </div> </a>
+                        </div>
+                        <div class="col-sm-4">
+						<a href="/users/davehopkins">
+                            <div class="team-box">
+                                <!-- <img class="img-responsive img-full" src="../images/team-1.jpg" alt="team"> -->
+                                <div class="team-detail">
+                                    <ul>
+                                        <li><h3>David J. Hopkins, CPA</h3></li>
+                                        <br />
+                                        <li><h4>Partner</h4></li>
+                                    </ul>
+                                </div>
+                            </div> </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="/users/joetameron">
+                            <div class="team-box">
+                               <!-- <img class="img-responsive img-full" src="../images/team-2.jpg" alt="team"> -->
+                                <div class="team-detail">
+                                    <ul>
+                                        <li><h3>Joseph A. Tameron, CPA</h3></li>
+                                        <br />
+                                        <li><h4>Partner</h4></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="/users/georgehostal">
+                            <div class="team-box">			
+                               <!--  <img class="img-responsive img-full" src="../images/team-3.jpg" alt="team"> -->
+                                <div class="team-detail">
+                                    <ul>
+                                        <li><h3>George M. Hostal Jr.</h3></li>
+                                        <br />
+                                        <li><h4>Partner</h4></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<div class ="pagelink">
+				<p>
+                <a href="/users/team" class="button-link">All Team Members</a>
+				</p>
+				</div>
+            </section>
+
+        <!-- Clients -->
+            <section id="clients" class="clients">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="title-box">
+                                <h2 class="section-title">CAREERS</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                                                               <p style ="text-align: center; font-size: large"> At Hopkins Tameron Hostal Levidow we believe that our most valuable assets are our team members. We are dedicated to the growth of our individual team members, knowing that job satisfaction is a critical component to overall success.  We also know that positive and supported team members will provide quality service to our clients and enjoy what they do!</p>
+ 
+                                <p style ="text-align: center; font-size: large">If you are someone who is committed to being a part of a positive and progressive culture, is willing to grow with us, and is looking for a collaborative environment to utilize your individual skills, please contact us! </p>
+ 
+                                <p style ="text-align: center; font-size: large">You can request an initial meeting by uploading your resume below.</p>
+                            <div class ="pagelink">
+                                <p>
+                                    <form action="/users/resumeemail" name="uploadForm" method="post" enctype="multipart/form-data">
+                                    <input type="file" name = "file" class="button-link" style="margin:0px auto; display:block;"></input>
+                                </br>
+                                    <input type="submit" value="Upload" class="button-link" style="margin:0px auto; display:block;">
+                                </form>
+                                </p>
+                            </div>
+
+            </section>
+
+        <!-- Testimonial -->
+           <section id="slider-1" class="slider-1 overlay-light">
+                <div class="container">
+                    
+                </div>
+            </section>
+
+        <!-- Contact -->
+            <section id="contact" class="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="title-box">
+                                <h2 class="section-title">Contact us</h2>
+                            </div>
+
+<div style ="margin:0 auto;"class="mapouter"><div class="gmap_canvas"><iframe width="600" height="300" id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26570.466615446676!2d-111.92041595378888!3d33.64917196590362!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b74ed8714b5a5%3A0xba1bf0f90e85877!2sLevidow+Lloyd+J+CPA!5e0!3m2!1sen!2sus!4v1532313348926" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
+					<br><br>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+																	<p> </p>
+                            <img src="../images/logo.png" alt="logo" class="contact-logo">
+                            <p>
+                    We serve a wide range of clientele, and every client relationship is valued greatly. Our clients from the depth and breadth of our combined expertise. At HTH we are committed to your financial well-being. We would be happy to schedule a complimentary initial consultation with us to help get you started!
+                            </p>
+                            <ul>
+                                <li><span class="ion-location"></span>15333 N Pima Rd, Suite 265, Scottsdale, AZ 85260</li>
+                                <li><span class="ion-android-call"></span> 480-315-9730</li>
+                                <li><span class="ion-printer"></span>480-367-1720</li>
+                            </ul>
+						</div>
+                        <div class="col-sm-6">
+                            <form id="contactForm" action="/users/formemail" method="post">
+                                <div class="input-group">      
+                                    <span class="input-group-addon">
+                                        <i class="ion-person"></i>
+                                    </span> 
+                                    <input class="form-control" type="text" placeholder="Your Name" name="name" required>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="ion-email"></i>
+                                    </span>
+                                    <input class="form-control" name="email" type="email" placeholder="Your Email" required>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon custom-addon">
+                                        <i class="ion-chatbubbles"></i>
+                                    </span>
+                                    <textarea class="form-control" rows="8" placeholder="Write Message" name="message"></textarea>
+                                </div>
+                                <div class="g-recaptcha" data-sitekey="6LcOumUUAAAAAARAQTBifHFGuwSgdiMlOr_3S4Ta" data-callback="enableContactBtn">  </div> <br>
+                                <button id="cfsubmit" type="submit" class="btn btn-default btn-block" disabled="true">Send your Message <span class="ion-paper-airplane"></span></button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+			
+		
+            <!-- Subscribe -->
+            <div id="subscribe"  class="subscribe">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <br><br><br><br>
+                            <h2>Subscribe to our newsletter</h2>
+                        </div>
+                        <div class="col-sm-6">
+                            <form class="subscribe-form" id="subscription-form" action="/users/subscribe" method="post">
+                                <div class="form-group">
+                                    <label class="sr-only" for="subscriber-email">Email address</label>
+                                    <div class="form-group has-feedback">
+                                        <div class="input-group">
+                                            <span class="input-group-addon ion-email"></span>
+                                            <input type="email" id="subscriber-email" class="form-control" name = "email" placeholder="email" required>
+                                        </div>
+                                        <span class="ion-android-checkmark-circle form-control-feedback" aria-hidden="true"></span>
+                                    </div>
+                                </div><!--/input-grpup-->
+
+                            <div class="g-recaptcha" data-sitekey="6LcOumUUAAAAAARAQTBifHFGuwSgdiMlOr_3S4Ta" data-callback="enableNewsletterBtn"> </div><br>
+
+                            <button id="subscribe-button" type="submit" class="btn btn-default btn-block" disabled="true">Subscribe <span class="ion-paper-airplane"></span></button><br>
+                            </form>
+
+                            <!-- SUCCESS OR ERROR MESSAGES -->
+                            <div id="subscription-response"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="footer-social">
+                                <a href="https://www.facebook.com/Hopkins-Tameron-Hostal-582836651925232/" target="_blank"><i class="ion-social-facebook"></i></a>
+                                <a href="https://www.linkedin.com/company/16232649/" target="_blank"><i class="ion-social-linkedin-outline"></i></a>
+                                <a href="#"><i class="ion-social-twitter"></i></a>
+								<a href="#"><i class="ion-social-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        
+        <!-- Scripts -->
+        <script src="assets/js/jquery-1.12.3.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+        <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="assets/js/script.js"></script>
+        <script>
+             function enableContactBtn(){
+                document.getElementById("cfsubmit").disabled = false;
+               }
+
+             function enableNewsletterBtn(){
+                document.getElementById("subscribe-button").disabled = false;
+               }
+        </script>
+    </body>
 </html>
