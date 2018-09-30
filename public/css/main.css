@@ -623,6 +623,8 @@ text-shadow: 0 0 2px #999;
 }
 .contact-logo{
 	margin-bottom: 30px;
+    display: inline-block;
+    width: 50%;
 }
 .contact ul{
 	padding-left: 0;
