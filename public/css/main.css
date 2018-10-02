@@ -95,18 +95,18 @@ section{
 }
 @media (min-width: 1000px){
 	.navbar-brand img{
-		width: 110px;
+		width: 90px;
 	}
 	.navbar-nav>li>a{
 		padding-top: 30px;
 		padding-bottom: 30px;
 	}	
 	.navbar-brand img{
-	width: 90px;
+	width: 120px;
 	transition: all 0.4s ease-in-out;
 	position: absolute;  
 	margin: auto;
-	height: 35px;
+	height: 45px;
 	 top: 0;  
     bottom: 0;  
 }
